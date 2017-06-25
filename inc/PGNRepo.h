@@ -1,5 +1,5 @@
-#ifndef CHESSBOARD_H
-#define CHESSBOARD_H
+#ifndef PGNREPO_H
+#define PGNREPO_H
 
 
 
