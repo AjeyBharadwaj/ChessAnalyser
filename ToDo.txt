@@ -1,0 +1,3 @@
+Create class and implement necessary functions.
+Implement required QT functionalities.
+
