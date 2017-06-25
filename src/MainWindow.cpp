@@ -1,3 +1,13 @@
-#include "inc/MainWindow.h"
+#include <iostream>
 
-// Implement MainWindow.h functions
+#include "../inc/MainWindow.h"
+
+using namespace std;
+
+MainWindow::MainWindow() {
+    //qDebug() << "Constructor called" << endl;
+}
+
+MainWindow::~MainWindow() {
+    //qDebug() << "Destructor called" << endl;
+}
