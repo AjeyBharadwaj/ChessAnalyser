@@ -1,3 +1,3 @@
-#include "../inc/GameRepo.h"
+#include "../inc/PGNRepo.h"
 
 // Implement GameRepo.h functions
