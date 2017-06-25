@@ -4,6 +4,8 @@
 #include <QApplication>
 #include <QtWidgets/QMainWindow>
 
+#include "../inc/Board.h"
+
 namespace Ui {
     class MainWindow;
 }
@@ -13,6 +15,9 @@ class MainWindow : public QMainWindow {
 public:
     MainWindow();
     ~MainWindow();
+
+private:
+    Board *B;
 
 };
 

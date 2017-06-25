@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 
 #include "../inc/Board.h"
+#include "../inc/Repo.h"
 
 using namespace std;
 
@@ -23,15 +25,12 @@ enum Pawn {
     PAWN
 };
 
-typedef struct Pos {
-    int row;
-    int col;
-} Position;
-
 typedef struct Block {
     Position Pos;
     Colour   colour;
     Pawn     pawn;
+    void     *dynamicData;
+    void     *staticData;
 } Block;
 
 /*
@@ -39,19 +38,13 @@ typedef struct Block {
  * Each move* funtionc should take additional parameter which defines the algo.
  */
 
+template<typename T>
 class ChessBoard : public Board {
 public:
     ChessBoard();
-    ChessBoard(string fileName); // A Repo name.
+    ChessBoard(string repoName); // A Repo name.
     ~ChessBoard();
 
-    bool moveToFirst(); // First here doesn`t means first move.
-    bool moveToPrev();
-    bool moveToNext();
-    bool moveToEnd();
-
-    string getCurrentMove();
-    int getMoveCount();
     string getfileName();
 
 private:
@@ -61,6 +54,9 @@ private:
 
     // List changes in postion. [<from,to>, <from,to>....]
     Block* parse(string move, int &changes);
+    std::map<Position, Block*> blocks;
+
+    Repo R;
 };
 
 #endif
