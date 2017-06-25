@@ -3,14 +3,16 @@ QT += widgets
 TARGET    = ChessAnalyser 
 TEMPLATE  = app
 
-SOURCES   = src\ChessAnalyser.cpp \
+SOURCES   = src\ChessBoard.cpp \
             src\GameRepo.cpp \
-            src\move.cpp \
+            src\MainWindow.cpp \
             src\main.cpp
-            
-HEADERS   = include\ChessAnalyser.h \
-            include\GameRepo.h \
-            include\move.h
+
+HEADERS   = inc\Board.h \
+            inc\ChessBoard.h \
+            inc\Repo.h \
+            inc\GameRepo.h \
+            inc\MainWindow.h
 
 RESOURCES = src\ExtraFiles.qrc
 
