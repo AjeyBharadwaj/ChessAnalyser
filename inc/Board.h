@@ -13,6 +13,7 @@ enum GameType {
     GAME
 };
 
+
 class Board {
 public:
     Board() {row = col = currMoveCount = 0;};
@@ -27,7 +28,7 @@ public:
     virtual bool moveToFirst() = 0; // First here doesn`t means first move.
     virtual bool moveToPrev() = 0;
     virtual bool moveToNext() = 0;
-    virtual bool moveTeNext(Position from, Position to); // Override for actual game.
+    virtual bool moveTeNext(Position from, Position to) = 0; // Override for actual game.
     virtual bool moveToEnd() = 0;
     virtual int  getMoveCount() = 0;
 
@@ -40,6 +41,10 @@ public:
     virtual bool  setDynamicData(Position P, void *dPtr) = 0;
     virtual void* getStaticData(Position P) = 0;
     virtual void* getDynamicData(Position P) = 0;
+
+    virtual const char* getPawn(Position P) = 0;
+    virtual const char* getPawnColour(Position P) = 0;
+    virtual const char* getBackgroundColour(Position P) = 0;
 
 private:
     int row;

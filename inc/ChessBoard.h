@@ -27,7 +27,8 @@ enum Pawn {
 
 typedef struct Block {
     Position Pos;
-    Colour   colour;
+    Colour   backgroundColour;
+    Colour   pawnColour;
     Pawn     pawn;
     void     *dynamicData;
     void     *staticData;
@@ -38,7 +39,7 @@ typedef struct Block {
  * Each move* funtionc should take additional parameter which defines the algo.
  */
 
-template<typename T>
+//template<typename T>
 class ChessBoard : public Board {
 public:
     ChessBoard();
@@ -52,11 +53,27 @@ private:
     bool initBoard(Block **block);
     bool set(Block block, int r, int c);
 
+    bool moveToFirst();
+    bool moveToPrev();
+    bool moveToNext();
+    bool moveTeNext(Position from, Position to); // Override for actual game.
+    bool moveToEnd();
+    int  getMoveCount();
+
+    bool  setStaticData(Position P, void *dPtr);
+    bool  setDynamicData(Position P, void *dPtr);
+    void* getStaticData(Position P);
+    void* getDynamicData(Position P);
+
+    const char* getPawn(Position P);
+    const char* getPawnColour(Position P);
+    const char* getBackgroundColour(Position P);
+
     // List changes in postion. [<from,to>, <from,to>....]
     Block* parse(string move, int &changes);
     std::map<Position, Block*> blocks;
 
-    Repo R;
+    Repo *R;
 };
 
 #endif
