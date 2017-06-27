@@ -12,17 +12,18 @@ using namespace std;
 
 enum Colour {
     BLACK,
-    WHITE
+    WHITE,
+    NONE
 };
 
 enum Pawn {
-    EMPTY,
     ROOK,
     KNIGHT,
     BISHOP,
     QUEEN,
     KING,
-    PAWN
+    PAWN,
+    EMPTY
 };
 
 typedef struct Block {
@@ -71,7 +72,7 @@ private:
 
     // List changes in postion. [<from,to>, <from,to>....]
     Block* parse(string move, int &changes);
-    std::map<Position, Block*> blocks;
+    std::map<int, Block*> blocks;
 
     Repo *R;
 };

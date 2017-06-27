@@ -2,11 +2,16 @@
 #define BOARD_H
 
 #include <iostream>
+#include <QDebug>
+
 using namespace std;
 
 typedef struct Position {
     int row;
     int col;
+    bool operator <( const struct Position &rhs ) const {
+        return (row == rhs.row && col == rhs.col);
+    }
 } Position;
 
 enum GameType {
