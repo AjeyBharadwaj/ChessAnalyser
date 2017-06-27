@@ -65,9 +65,9 @@ private:
     void* getStaticData(Position P);
     void* getDynamicData(Position P);
 
-    const char* getPawn(Position P);
-    const char* getPawnColour(Position P);
-    const char* getBackgroundColour(Position P);
+    const string getPawn(Position P);
+    const string getPawnColour(Position P);
+    const string getBackgroundColour(Position P);
 
     // List changes in postion. [<from,to>, <from,to>....]
     Block* parse(string move, int &changes);

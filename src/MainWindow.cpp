@@ -1,17 +1,23 @@
 #include <iostream>
 
 #include "../inc/MainWindow.h"
+#include "../inc/ChessDraw.h"
 
 using namespace std;
 
 MainWindow::MainWindow() {
     initLayout();
     initBoard();
+    initDraw();
     drawDefaultBoard();
 }
 
 MainWindow::~MainWindow() {
     //qDebug() << "Destructor called" << endl;
+}
+
+void MainWindow::initDraw() {
+    draw = new ChessDraw(8, 8, board, (QAbstractButton **)square);
 }
 
 void MainWindow::initLayout() {
@@ -107,11 +113,22 @@ void MainWindow::infoBoxSetup() {
 }
 
 void MainWindow::initBoard() {
+    int i, j;
+
     board = new ChessBoard();
+    square = new QPushButton*[8];
+    for(i = 0; i < 8; i++) {
+        square[i] = new QPushButton[8];
+        for(j = 0; j < 8; j++) {
+            square[i][j].setFixedSize(50, 50);
+            square[i][j].setIconSize(QSize(50, 50));
+            boardLayout->addWidget(&square[i][j], i, j);
+        }
+    }
 }
 
 void MainWindow::drawDefaultBoard() {
-
+    draw->drawDefaultBoard();
 }
 
 void MainWindow::moveToFirst() {

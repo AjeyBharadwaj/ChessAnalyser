@@ -18,6 +18,7 @@
 
 #include "../inc/Board.h"
 #include "../inc/ChessBoard.h"
+#include "../inc/Draw.h"
 
 namespace Ui {
     class MainWindow;
@@ -44,6 +45,7 @@ private:
 
     void initLayout();
     void initBoard();
+    void initDraw();
     void drawDefaultBoard();
 
     void moveButtonSetup();
@@ -79,7 +81,7 @@ private:
             *algo1Label, *algo2Label;
 
     ChessBoard *board;
-
+    Draw *draw;
 };
 
 #endif

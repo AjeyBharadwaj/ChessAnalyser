@@ -1,12 +1,15 @@
+#ifndef DRAW_H
+#define DRAW_H
+
 #include "Board.h"
 
 class Draw {
 public:
-    bool draw(const Position *p) = 0;
-    bool drawDefaultBoard() = 0;
+    virtual bool draw(const Position *p) = 0;
+    virtual bool drawDefaultBoard() = 0;
 
-private:
     int row;
     int col;
 };
 
+#endif

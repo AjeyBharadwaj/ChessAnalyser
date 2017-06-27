@@ -54,15 +54,15 @@ void* ChessBoard::getDynamicData(Position P) {
     return NULL;
 }
 
-const char* ChessBoard::getPawn(Position P) {
-    return "P";
+const string ChessBoard::getPawn(Position P) {
+    return "rook";
 }
 
-const char* ChessBoard::getPawnColour(Position P) {
-    return "P";
+const string ChessBoard::getPawnColour(Position P) {
+    return "black";
 }
 
-const char* ChessBoard::getBackgroundColour(Position P) {
-    return "P";
+const string ChessBoard::getBackgroundColour(Position P) {
+    return "black";
 }
 

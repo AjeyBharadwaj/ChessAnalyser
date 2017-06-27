@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include <iostream>
+using namespace std;
 
 typedef struct Position {
     int row;
@@ -42,9 +43,9 @@ public:
     virtual void* getStaticData(Position P) = 0;
     virtual void* getDynamicData(Position P) = 0;
 
-    virtual const char* getPawn(Position P) = 0;
-    virtual const char* getPawnColour(Position P) = 0;
-    virtual const char* getBackgroundColour(Position P) = 0;
+    virtual const string getPawn(Position P) = 0;
+    virtual const string getPawnColour(Position P) = 0;
+    virtual const string getBackgroundColour(Position P) = 0;
 
 private:
     int row;
